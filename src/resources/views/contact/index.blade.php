@@ -146,8 +146,8 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <select class="create-form__item-select" name="category_id">
+                <div class="form__input">
+                    <select class="form__input--select" name="category_id">
                         <option value="">選択してください</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>

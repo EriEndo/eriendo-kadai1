@@ -21,25 +21,25 @@
     <form class="search-form" action="/search" method="get">
         @csrf
         <div class="search-form__item">
-            <input class="search-form__item-input" type="text" name="name" placeholder="名前やメールアドレスを入力してください" value="{{ old('name') }}">
+            <input class="search-form__item-input" type="text" name="name" placeholder="名前やメールアドレスを入力してください" value="{{ request('name') }}">
 
             <select class="search-form__item-select" name="gender">
                 <option value="" selected>性別</option>
-                <option value="1">男性</option>
-                <option value="2">女性</option>
-                <option value="3">その他</option>
+                <option value="1" {{ request('gender') == 1 ? 'selected' : '' }}>男性</option>
+                <option value="2" {{ request('gender') == 2 ? 'selected' : '' }}>女性</option>
+                <option value="3" {{ request('gender') == 3 ? 'selected' : '' }}>その他</option>
             </select>
 
             <select name="category_id">
                 <option value="" selected>お問い合わせの種類</option>
-                <option value="1" {{ old('category_id') == 1 ? 'selected' : '' }}>商品のお届けについて</option>
-                <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>商品の交換について</option>
-                <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>商品トラブル</option>
-                <option value="4" {{ old('category_id') == 4 ? 'selected' : '' }}>ショップへのお問い合わせ</option>
-                <option value="5" {{ old('category_id') == 5 ? 'selected' : '' }}>その他</option>
+                <option value="1" {{ request('category_id') == 1 ? 'selected' : '' }}>商品のお届けについて</option>
+                <option value="2" {{ request('category_id') == 2 ? 'selected' : '' }}>商品の交換について</option>
+                <option value="3" {{ request('category_id') == 3 ? 'selected' : '' }}>商品トラブル</option>
+                <option value="4" {{ request('category_id') == 4 ? 'selected' : '' }}>ショップへのお問い合わせ</option>
+                <option value="5" {{ request('category_id') == 5 ? 'selected' : '' }}>その他</option>
             </select>
 
-            <input type="date" name="date" value="{{ old('date') }}" class="form__input--date">
+            <input type="date" name="date" value="{{ request('date') }}" class="form__input--date">
 
             <button class="search-form__button-submit" type="submit">検索</button>
             <button type="button" class="search-form__button-reset" onclick="window.location.href='/admin'">リセット</button>
