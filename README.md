@@ -4,7 +4,7 @@
 
 **Docker ビルド**
 
-1. `git clone git@github.com:Estra-Coachtech/laravel-docker-template.git`
+1. `git clone git@github.com:EriEndo/eriendo--kadai1.git`
 2. DockerDesktop アプリを立ち上げる
 3. `docker-compose up -d --build`
 
