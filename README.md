@@ -103,3 +103,14 @@ php artisan db:seed
 ![ER図](src/public/ERD.svg)
 
 ---
+
+## 補足
+
+"The stream or file could not be opned"エラーが発生した場合
+ディレクトリ/ファイルの権限を変更してください
+
+```bash
+sudo chmod -R 777 src/staroge
+```
+
+---
